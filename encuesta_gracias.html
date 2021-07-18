@@ -1,0 +1,349 @@
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resultados encuesta - Citadinos</title>
+    <script src="scripts.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript">
+      function ChangeColor(id, colour) {
+        document.getElementById(id).style.backgroundColor = colour;
+      }
+
+      function switchImage(imgName, imgSrc) {
+        if (document.images) {
+          if (imgSrc != "none") {
+            document.images[imgName].src = imgSrc;
+          }
+        }
+      }
+    </script>
+    <noscript>
+      <b>
+        <font color="red">Esta página usa scripts!!!</font>
+      </b>
+    </noscript>
+  </head>
+
+  <body>
+    <div id="citadinos">
+      <header>
+        <div class="top-header">
+          <a href="index.html" class="logo">
+            <img
+              src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2FCitadinos.png"
+              width="465px"
+              height="90px"
+              alt="Pagina principal"
+            />
+          </a>
+          <div class="weather">
+            <img
+              src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fweather.png"
+              width="128px"
+              height="90px"
+            />
+          </div>
+        </div>
+        <div class="informacion">
+          <font
+            style="float: left"
+            color="BLACK"
+            face="Verdana"
+            size="2"
+            id="weather"
+          >
+            &nbsp;&nbsp;
+            <b>Tránsito:</b>
+            Obras en la Avenida Central
+          </font>
+          <font color="black" face="Verdana" size="2" style="float: right">
+            <b>Hoy:</b>
+            <script>
+              var now = new Date();
+              var days = new Array(
+                "Domingo",
+                "Lunes",
+                "Martes",
+                "Miércoles",
+                "Jueves",
+                "Viernes",
+                "Sábado"
+              );
+              var months = new Array(
+                "Enero",
+                "Febrero",
+                "Marzo",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
+                "Agosto",
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre"
+              );
+              var date = (now.getDate() < 10 ? "0" : "") + now.getDate();
+
+              function fourdigits(number) {
+                return number < 1000 ? number + 1900 : number;
+              }
+              today =
+                days[now.getDay()] +
+                " " +
+                date +
+                " " +
+                months[now.getMonth()] +
+                " " +
+                fourdigits(now.getYear()) +
+                ", Soleado, 23&deg;C&nbsp;&nbsp;</FONT>";
+              document.all.weather.setAttribute("BGCOLOR", "#EDEDED", 0);
+              document.write(today);
+            </script>
+          </font>
+        </div>
+      </header>
+      <main>
+        <div class="columna-izq">
+          <table width="155px" border="0px" cellspacing="0px" cellpadding="0px">
+            <tbody>
+              <tr height="1px">
+                <td
+                  width="155px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+
+                <td
+                  width="1px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_t.gif"
+                  rowspan="9"
+                  valign="TOP"
+                >
+                  <img
+                    src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_t.gif"
+                    width="1"
+                    height="30px"
+                  />
+                </td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="home"
+                  onmouseover="switchImage('nav_home', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_home.png'); ChangeColor('home','#FFF')"
+                  onmouseout="switchImage('nav_home', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_home2.png'); ChangeColor('home','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='index.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      name="nav_home"
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_home2.png"
+                      width="125"
+                      height="35"
+                      border="0px"
+                      hspace="7"
+                      alt="inicio"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="news"
+                  onmouseover="switchImage('nav_news', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_news.png'); ChangeColor('news','#FFF')"
+                  onmouseout="switchImage('nav_news', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_news2.png'); ChangeColor('news','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='noticias.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      name="nav_news"
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_news2.png"
+                      width="125"
+                      height="35"
+                      hspace="7"
+                      border="0px"
+                      alt="noticias"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="tickets"
+                  onmouseover="switchImage('nav_facts', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_facts.png'); ChangeColor('tickets','#FFF')"
+                  onmouseout="switchImage('nav_facts', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_facts2.png'); ChangeColor('tickets','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='entradas.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      name="nav_facts"
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_facts2.png"
+                      width="125"
+                      height="35"
+                      hspace="7"
+                      border="0px"
+                      alt="Entradas"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="survey"
+                  onmouseover="switchImage('nav_survey', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_survey.png'); ChangeColor('survey','#FFF')"
+                  onmouseout="switchImage('nav_survey', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_survey2.png'); ChangeColor('survey','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='encuesta.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_survey2.png"
+                      name="nav_survey"
+                      width="125"
+                      height="35"
+                      hspace="7"
+                      border="0px"
+                      alt="encuesta"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="contenido">
+          <div class="resultado-encuesta">
+            <h1 class="titulo">Gracias por completar la encuesta!</h1>
+            <p class="titulo">
+              <font size="4">
+                Encuesta de la Semana: ¿más parques en la ciudad, ganamos o
+                perdemos?
+              </font>
+            </p>
+            <h2 class="titulo">
+              <font size="3">
+                Resultados de la encuesta de la semana anterior
+              </font>
+            </h2>
+            <table
+              width="560px"
+              border="0"
+              style="float: left; border: 1px dashed silver; margin: 10px 0 0"
+            >
+              <caption>Cuál es tu órgano favorito y cuál tu odiado?</caption>
+              <tr bgcolor="#DBDBDB">
+                <th scope="col">Emociones</th>
+                <th scope="col">Pulmón</th>
+                <th scope="col">Páncreas</th>
+                <th scope="col">Bazo</th>
+                <th scope="col">Hígado</th>
+                <th scope="col">Piel</th>
+                <th scope="col">Cerebro</th>
+              </tr>
+
+              <tr>
+                <th scope="row">lo amo</th>
+                <td>0</td>
+                <td>4</td>
+                <td>10</td>
+                <td>0</td>
+                <td>1</td>
+                <td>4</td>
+              </tr>
+
+              <tr bgcolor="#DBDBDB">
+                <th scope="row">lo odio</th>
+                <td>5</td>
+                <td>6</td>
+                <td>0</td>
+                <td>14</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <ul>
+          <li class="iconos-sociales">
+            <a
+              href="https://www.facebook.com/accesibilidad.y.usabilidad.utn.frba/"
+              aria-label="Facebook Accesibilidad y usabilidad UTN "
+            >
+              <i class="fab fa-facebook-square fa-lg"></i>
+            </a>
+          </li>
+          <li class="iconos-sociales">
+            <a href="https://twitter.com/w3c" aria-label="Twitter W3C">
+              <i class="fab fa-twitter-square fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+        <font
+          color="#333"
+          size="2"
+          style="font-family: sans-serif; float: right; padding: 4px 10px 0 0"
+        >
+          <a
+            rel="Copyright"
+            title="This software or document includes material copied from or derived from WAI BAD demo. Copyright © 2012 W3C® (MIT, ERCIM, Keio, Beihang)."
+            href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright"
+          >
+            Copyright
+          </a>
+          ©2012
+          <a href="http://www.w3.org/">
+            <abbr title="World Wide Web Consortium">W3C</abbr>
+          </a>
+          ® &mdash; 2018 Versión
+          <a href="http://ayutn.com.ar/">
+            <abbr title="Diplomatura en Accesibilidad y Usabilidad">AYU</abbr>
+          </a>
+        </font>
+      </footer>
+    </div>
+  </body>
+</html>

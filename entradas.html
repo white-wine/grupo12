@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Entradas - Citadinos</title>
+    <script src="scripts.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript">
+      function ChangeColor(id, colour) {
+        document.getElementById(id).style.backgroundColor = colour;
+      }
+
+      function switchImage(imgName, imgSrc) {
+        if (document.images) {
+          if (imgSrc != "none") {
+            document.images[imgName].src = imgSrc;
+          }
+        }
+      }
+    </script>
+    <noscript>
+      <b>
+        <font color="red">Esta página usa scripts!!!</font>
+      </b>
+    </noscript>
+  </head>
+
+  <body>
+    <div id="citadinos">
+      <header>
+        <div class="top-header">
+          <a href="index.html" class="logo">
+            <img
+              src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2FCitadinos.png"
+              width="465px"
+              height="90px"
+              alt="pagina principal."
+            />
+          </a>
+          <div class="weather">
+            <img
+              src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fweather.png"
+              width="128px"
+              height="90px"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="informacion">
+          <font
+            style="float: left"
+            color="BLACK"
+            face="Verdana"
+            size="2"
+            id="weather"
+          >
+            &nbsp;&nbsp;
+            <b>Tránsito:</b>
+            Obras en la Avenida Central
+          </font>
+          <font color="black" face="Verdana" size="2" style="float: right">
+            <b>Hoy:</b>
+            <script>
+              var now = new Date();
+              var days = new Array(
+                "Domingo",
+                "Lunes",
+                "Martes",
+                "Miércoles",
+                "Jueves",
+                "Viernes",
+                "Sábado"
+              );
+              var months = new Array(
+                "Enero",
+                "Febrero",
+                "Marzo",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
+                "Agosto",
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre"
+              );
+              var date = (now.getDate() < 10 ? "0" : "") + now.getDate();
+
+              function fourdigits(number) {
+                return number < 1000 ? number + 1900 : number;
+              }
+              today =
+                days[now.getDay()] +
+                " " +
+                date +
+                " " +
+                months[now.getMonth()] +
+                " " +
+                fourdigits(now.getYear()) +
+                ", Soleado, 23&deg;C&nbsp;&nbsp;</FONT>";
+              document.all.weather.setAttribute("BGCOLOR", "#EDEDED", 0);
+              document.write(today);
+            </script>
+          </font>
+        </div>
+      </header>
+      <main>
+        <div class="columna-izq">
+          <table width="155px" border="0px" cellspacing="0px" cellpadding="0px">
+            <tbody>
+              <tr height="1px">
+                <td
+                  width="155px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+
+                <td
+                  width="1px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_t.gif"
+                  rowspan="9"
+                  valign="TOP"
+                >
+                  <img
+                    src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_t.gif"
+                    width="1"
+                    height="30px"
+                    alt=""
+                  />
+                </td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="home"
+                  onmouseover="switchImage('nav_home', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_home.png'); ChangeColor('home','#FFF')"
+                  onmouseout="switchImage('nav_home', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_home2.png'); ChangeColor('home','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='index.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      name="nav_home"
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_home2.png"
+                      width="125"
+                      height="35"
+                      border="0px"
+                      hspace="7"
+                      alt="inicio"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="news"
+                  onmouseover="switchImage('nav_news', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_news.png'); ChangeColor('news','#FFF')"
+                  onmouseout="switchImage('nav_news', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_news2.png'); ChangeColor('news','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='noticias.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      name="nav_news"
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_news2.png"
+                      width="125"
+                      height="35"
+                      hspace="7"
+                      border="0px"
+                      alt="noticias"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="tickets"
+                  onmouseover="switchImage('nav_facts', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_facts.png'); ChangeColor('tickets','#FFF')"
+                  onmouseout="switchImage('nav_facts', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_facts2.png'); ChangeColor('tickets','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='entradas.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      name="nav_facts"
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_facts2.png"
+                      width="125"
+                      height="35"
+                      hspace="7"
+                      border="0px"
+                      alt="Entradas"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+              <tr height="35px">
+                <td
+                  width="154px"
+                  bgcolor="#EDEDED"
+                  id="survey"
+                  onmouseover="switchImage('nav_survey', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_survey.png'); ChangeColor('survey','#FFF')"
+                  onmouseout="switchImage('nav_survey', 'https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_survey2.png'); ChangeColor('survey','#EDEDED')"
+                  style="background-color: rgb(237, 237, 237)"
+                >
+                  <a
+                    href="javascript:location.href='encuesta.html';"
+                    style="outline: none"
+                  >
+                    <img
+                      src="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fnav_survey2.png"
+                      name="nav_survey"
+                      width="125"
+                      height="35"
+                      hspace="7"
+                      border="0px"
+                      alt="encuesta"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr height="1px">
+                <td
+                  width="154px"
+                  background="https://cdn.glitch.com/4d1b9aaa-12e9-49c7-add2-d344397c2894%2Fmarker2_w.gif"
+                ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="contenido">
+          <p style="padding-top: 5px">
+            <h1>Entradas para recitales en Citadinos</h1>
+          </p>
+          <div class="ofertas-especiales">
+            <div class="texto">
+              <p>
+                Citadinos en asociación con Humo Entretenimiento S.A. se
+                complace en anunciar precios especiales para las entradas de
+                estos grandes artistas:
+                <i><b>Los Enfermeros y The Great Obelisk.</b></i>
+              </p>
+              <p>
+                Estas
+                <big style="font-weight: bold">ofertas especiales</big>
+                son exclusivas para Citadinos y se pueden comprar sólo llamando
+                a nuestra línea de la música: <a href="tel:0800687422" class="phone-link">0800-687422</a>
+              </p>
+            </div>
+            <div class="fecha-recital">
+              
+                <h2 style="width: 100%; text-align: center; display: block;;">Fechas de los recitales</h2>
+               
+                <ol>
+                  <li><strong>Los enfermeros:</strong> <time datetime="2013-2-12">12/2/13</time></li>  
+                  <li><strong>The Great Obelisk:</strong> <time datetime="2013-3-24">24/3/13</time></li>  
+                </ol>
+            </div>
+          </div>
+          <div class="precios">
+              <h2 class="subtitulo">Lista de precios</h2>
+              <table width="585px" cellspacing="0">
+                <caption>Adultos</caption>
+                <thead>
+                  <tr bgcolor="#c8d5db">
+                      <th scope="col"><b>
+                              <font color="222535">GRUPO MUSICAL</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">PREF</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">BUTA</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">MESA</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">PIE</font>
+                          </b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <th><b>
+                              <font color="222535">Los Enfermeros - Mono, mono</font>
+                          </b></th>
+                      <td>
+                          <font color="222535">$459,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$339,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$200,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$111,00</font>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th><b>
+                              <font color="222535">The Great Obelisk - At the beach</font>
+                          </b></th>
+                      <td>
+                          <font color="222535">$500</font>
+                      </td>
+                      <td>
+                          <font color="222535">$400</font>
+                      </td>
+                      <td>
+                          <font color="222535">$300</font>
+                      </td>
+                      <td>
+                          <font color="222535">$100</font>
+                      </td>
+                  </tr>
+                </tbody>
+            </table>
+              <table width="585px" cellspacing="0">
+                <caption>Estudiantes y ancianos</caption>
+                <thead>
+                  <tr bgcolor="#c8d5db">
+                      <th scope="col"><b>
+                              <font color="222535">GRUPO MUSICAL</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">PREF</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">BUTA</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">MESA</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">PIE</font>
+                          </b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <th><b>
+                              <font color="222535">Los Enfermeros - Mono, mono</font>
+                          </b></th>
+                      <td>
+                          <font color="222535">$359,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$239,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$100,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$50,00</font>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th><b>
+                              <font color="222535">The Great Obelisk - At the beach</font>
+                          </b></th>
+                      <td>
+                          <font color="222535">$450</font>
+                      </td>
+                      <td>
+                          <font color="222535">$350</font>
+                      </td>
+                      <td>
+                          <font color="222535">$200</font>
+                      </td>
+                      <td>
+                          <font color="222535">$50</font>
+                      </td>
+                  </tr>
+                </tbody>
+            </table>
+              <table width="585px" cellspacing="0">
+                <caption>Grupo (5 o más)</caption>
+                <thead>
+                  <tr bgcolor="#c8d5db">
+                      <th scope="col"><b>
+                              <font color="222535">GRUPO MUSICAL</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">PREF</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">BUTA</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">MESA</font>
+                          </b></th>
+                      <th><b>
+                              <font color="222535">PIE</font>
+                          </b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <th><b>
+                              <font color="222535">Los Enfermeros - Mono, mono</font>
+                          </b></th>
+                      <td>
+                          <font color="222535">$369,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$249,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$110,90</font>
+                      </td>
+                      <td>
+                          <font color="222535">$60,00</font>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th><b>
+                              <font color="222535">The Great Obelisk - At the beach</font>
+                          </b></th>
+                      <td>
+                          <font color="222535">$460</font>
+                      </td>
+                      <td>
+                          <font color="222535">$360</font>
+                      </td>
+                      <td>
+                          <font color="222535">$210</font>
+                      </td>
+                      <td>
+                          <font color="222535">$60</font>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <div class="terminos-condiciones">
+            <div class="linea-musica">
+              <div>
+                <p>
+                  Compre entradas llamando a la línea de la música --
+                  ¡Llame ya!: <a href="tel:0800687422" class="phone-link">0800-687422</a>
+                </p>
+              </div>
+            </div>
+            <div id="terminos">
+              <br />
+              <div style="text-align: left">
+                <h2 style="font-size: 16px; letter-spacing: 0.055em;">Citadinos Términos y Condiciones</h2>
+              </div>
+              <p id="texto" align="left" style="line-height: 20pxx">
+                <ol>
+                  <li>
+                  Usted acuerda mediante el acto de llamar a la línea musica o al leer cualquier parte de estos términos y condiciones que usted no, ahora o nunca, (a) transmitirá cualquier material a cualquier persona, viva o muerta, que sea considerable por esa persona como difamatorio, dañino, ilegal, argumentativo o confuso, y que además (b) cualquier semejanza entre usted o su familia y las personas, los vehículos o instrumentos musicales vivos, muertos, y otros que aparecen en el sitio citadinos es totalmente involuntaria y que de haber parecidos entonces usted tomará medidas inmediatas para evitar que este tipo de semejanza ocurra de nuevo.
+                </li>
+                  <li>
+                  Citadinos no será responsable por cualquier daño o pérdida de ingresos, buena voluntad, entusiasmo o tono de piel que surja de o en conexión con el uso o la otra interacción con (a) los sitios web de citadinos, (b) las reseñas acerca del sitio citadinos, (c) los empleados o empleados potenciales de citadinos pasados o presentes, o (d) cualquier sitio web con enlaces a o vinculados desde el sitio web citadinos, directamente o a través de otros sitios web.
+                </li>
+                  <li>
+                  Remedios legales.
+                    ya que citadinos sufriría daños irreparables a un grado imprevisible si las secciones [1] y [2] no son específicamente forzadas, citadinos tendrá derecho sin mediar fianza u otra garantía ni prueba de daños, a disponer de recursos equitativos y adecuados con respecto a incumplimientos de estas secciones, además de otros recursos de que pudiera disponer.
+                  </li>
+                  </ol>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <ul>
+          <li class="iconos-sociales">
+            <a
+              href="https://www.facebook.com/accesibilidad.y.usabilidad.utn.frba/"
+              aria-label="Facebook Accesibilidad y usabilidad UTN "
+            >
+              <i class="fab fa-facebook-square fa-lg"></i>
+            </a>
+          </li>
+          <li class="iconos-sociales">
+            <a href="https://twitter.com/w3c" aria-label="Twitter W3C">
+              <i class="fab fa-twitter-square fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+        <font
+          color="#333"
+          size="2"
+          style="font-family: sans-serif; float: right; padding: 4px 10px 0 0"
+        >
+          <a
+            rel="Copyright"
+            title="This software or document includes material copied from or derived from WAI BAD demo. Copyright © 2012 W3C® (MIT, ERCIM, Keio, Beihang)."
+            href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright"
+          >
+            Copyright
+          </a>
+          ©2012
+          <a href="http://www.w3.org/">
+            <abbr title="World Wide Web Consortium">W3C</abbr>
+          </a>
+          ® &mdash; 2018 Versión
+          <a href="http://ayutn.com.ar/">
+            <abbr title="Diplomatura en Accesibilidad y Usabilidad">AYU</abbr>
+          </a>
+        </font>
+      </footer>
+    </div>
+  </body>
+</html>
